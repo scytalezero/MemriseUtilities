@@ -2,6 +2,7 @@
 // @name          MemriseUtilities
 // @namespace     http://ligature.me
 // @version       0.9
+// @grant         none
 // @description   Various helper functions for Memrise.
 // @homepageURL   https://github.com/scytalezero/MemriseUtilities
 // @updateURL     https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js
