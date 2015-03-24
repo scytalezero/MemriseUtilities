@@ -4,6 +4,7 @@
 // @version       0.9
 // @grant         none
 // @description   Various helper functions for Memrise.
+// @icon          http://cdn.altrn.tv/icons/memrise_10088.png?width=50&height=50&mode=crop&anchor=middlecenter
 // @homepageURL   https://github.com/scytalezero/MemriseUtilities
 // @updateURL     https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js
 // @downloadURL   https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js
