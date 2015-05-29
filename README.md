@@ -19,4 +19,4 @@ Clicking "Word list" will display a loading animation underneath while the level
 
 The tags are auto-generated and formatted for use in Learning With Texts (20 characters max, no spaces). They will include the name of the course and the level containing the word.
 
-Simply select all of the text in the textarea, copy it, and paste it into another app such as LWT.
+Simply select all of the text in the textarea, copy it, and paste it into another app such as LWT. You can also save the list as a file and it will import into Anki to create a deck.
