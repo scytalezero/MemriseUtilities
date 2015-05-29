@@ -3,8 +3,8 @@ User script with useful additions to the Memrise language learning site.
 
 # Installation
 First, you will need the appropriate user script addon for your browser:
-- Chrome: Tampermonkey
-- Firefox: Greasemonkey
+- Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
+- Firefox: [Greasemonkey](https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/)
  
 Next, [just click here](https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js) and you should be prompted to install the script. That's it!
 
