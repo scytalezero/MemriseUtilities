@@ -11,11 +11,11 @@ Next, [just click here](https://github.com/scytalezero/MemriseUtilities/raw/mast
 # Features
 Currently, MemriesUtilities only adds the ability to export the list of words and definitions from a Memrise course. Once the script is installed, navigating to the main page of a course will show a new "Word list" button next to "Difficult words".
 
-![Screenshot1](https://raw.githubusercontent.com/scytalezero/MemriseUtilities/master/Images/MemriseUtilities1.png)
+![Screenshot1](/Images/MemriseUtilities1.png)
 
 Clicking "Word list" will display a loading animation underneath while the levels are indexed. Once that is complete, a textarea will appear with a tab-separated list of words, definitions, and tags from all the levels of that course.
 
-![Screenshot2](https://raw.githubusercontent.com/scytalezero/MemriseUtilities/master/Images/MemriseUtilities2.png)
+![Screenshot2](/Images/MemriseUtilities2.png)
 
 The tags are auto-generated and formatted for use in Learning With Texts (20 characters max, no spaces). They will include the name of the course and the level containing the word.
 
