@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          MemriseUtilities
 // @namespace     http://ligature.me
-// @version       0.9.3
+// @version       0.9.4
 // @grant         none
 // @description   Various helper functions for Memrise and some other EO sites.
 // @icon          http://cdn.altrn.tv/icons/memrise_10088.png?width=50&height=50&mode=crop&anchor=middlecenter
@@ -33,7 +33,7 @@ function Main() {
       break;
     case "www.memrise.com":
       Out("Processing for Memrise");
-      if ( ($("li.active > a.tab").length === 0) || ($(".container > h2").length > 0) ) {
+      if ( ($("li.active > a.tab").length === 0) || ($(".container > h2").length > 0) || location.href.match(/\/edit\//) ) {
         //This isn't a course levels page
         Out("Not a course levels page.");
         return;
