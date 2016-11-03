@@ -57,8 +57,8 @@ function Main() {
 function SpiderLevels() {
   //Add our UI
   $("div.container-main").prepend("<div id='WordListContainer'><h2>Working</h2></div>");
-  $("a.level").each(function(Index) {
-    var URL = "http://www.memrise.com" + $(this).attr("href");
+  $(".level").each(function(Index) {
+    var URL = "http://www.memrise.com" + $(this).find(".level-actions a:nth-child(2)").attr("href");
     Out("Dispatching URL: " + URL);
     //if (Index > 0) return; //Debug
     Promises.push($.ajax({
