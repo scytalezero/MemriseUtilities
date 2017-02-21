@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          MemriseUtilities
 // @namespace     http://ligature.me
-// @version       0.9.4
+// @version       0.9.5
 // @grant         none
 // @description   Various helper functions for Memrise and some other EO sites.
 // @icon          http://cdn.altrn.tv/icons/memrise_10088.png?width=50&height=50&mode=crop&anchor=middlecenter
 // @homepageURL   https://github.com/scytalezero/MemriseUtilities
 // @updateURL     https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js
 // @downloadURL   https://github.com/scytalezero/MemriseUtilities/raw/master/MemriseUtilities.user.js
-// @match         http://*.memrise.com/course/*
+// @match         https://*.memrise.com/course/*
 // @match         http://akademio-de-esperanto.org/akademia_vortaro/*
 // @copyright     2012+, ScytaleZero
 // ==/UserScript==
@@ -58,7 +58,7 @@ function SpiderLevels() {
   //Add our UI
   $("div.container-main").prepend("<div id='WordListContainer'><h2>Working</h2></div>");
   $("a.level").each(function(Index) {
-    var URL = "http://www.memrise.com" + $(this).attr("href");
+    var URL = "https://www.memrise.com" + $(this).attr("href");
     Out("Dispatching URL: " + URL);
     //if (Index > 0) return; //Debug
     Promises.push($.ajax({
