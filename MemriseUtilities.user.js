@@ -57,8 +57,16 @@ function Main() {
 function SpiderLevels() {
   //Add our UI
   $("div.container-main").prepend("<div id='WordListContainer'><h2>Working</h2></div>");
-  $("a.level").each(function(Index) {
-    var URL = "https://www.memrise.com" + $(this).attr("href");
+  var urls = [];
+  if ($("a.level").length > 0) {  
+    $("a.level").each(function(Index) {
+        urls.push("https://www.memrise.com" + $(this).attr("href"));
+    });
+  } else {
+      urls.push(window.location.href);
+  }
+  Out(urls);
+  urls.forEach(function(URL) {
     Out("Dispatching URL: " + URL);
     //if (Index > 0) return; //Debug
     Promises.push($.ajax({
@@ -66,7 +74,6 @@ function SpiderLevels() {
       url: URL
     }).done(ExtractTerms));
   });
-  
   $.when.apply($, Promises).done(SpiderDone);
 }
 
