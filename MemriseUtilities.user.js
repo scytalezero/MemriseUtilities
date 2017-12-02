@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          MemriseUtilities
 // @namespace     http://ligature.me
-// @version       0.9.5
+// @version       1.0.0
 // @grant         none
 // @description   Various helper functions for Memrise and some other EO sites.
 // @icon          http://cdn.altrn.tv/icons/memrise_10088.png?width=50&height=50&mode=crop&anchor=middlecenter
@@ -79,18 +79,20 @@ function SpiderLevels() {
 
 //All levels have been parsed and the wordlist is done.
 function SpiderDone() {
-  var WordlistText = "", LCV;
+  var WordlistText = "", BareWordlistText = "", LCV;
   
   Out("Wordlist parsed.");
   //Add the wordlist text area.
-  $("#WordListContainer").empty().append("<div><h2>Course Wordlist as TSV</h2><textarea id='Wordlist' style='width:800px; height:400px;'></textarea><p>&nbsp;</p></div>");
+  $("#WordListContainer").empty().append("<div><h2>Course Wordlist as TSV</h2><textarea id='Wordlist' style='width:800px; height:400px;'></textarea><p>&nbsp;</p><h2>Bare Wordlist as TSV</h2><textarea id='BareWordlist' style='width:800px; height:400px;'></textarea></div>");
   for (var Level in Wordlist) {
     for (LCV=0; LCV<Wordlist[Level].length; LCV++) {
       WordlistText += Wordlist[Level][LCV].Word + "\t" + Wordlist[Level][LCV].Translation + "\t" + 
         CourseTag + "," + SanitizeTag(Level) + "\n";
+      BareWordlistText = BareWordlistText += Wordlist[Level][LCV].Word + "\t" + Wordlist[Level][LCV].Translation + "\n";
     }
   }
   $("#Wordlist").val(WordlistText.trimRight());
+  $("#BareWordlist").val(BareWordlistText.trimRight());
 }
 
 //Pull words and definitions from a level page.
