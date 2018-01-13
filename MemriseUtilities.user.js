@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          MemriseUtilities
 // @namespace     http://ligature.me
-// @version       1.0.0
+// @version       1.1.0
 // @grant         none
 // @description   Various helper functions for Memrise and some other EO sites.
 // @icon          http://cdn.altrn.tv/icons/memrise_10088.png?width=50&height=50&mode=crop&anchor=middlecenter
