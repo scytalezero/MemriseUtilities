@@ -44,6 +44,11 @@ function Main() {
       CourseTag = SanitizeTag($("h1.course-name").text().trim());
 
       //Insert the terms extractor button
+      $("ul.nav-pills").append("<li><select id='WordFilter' style='width: 150px'>" +
+        "<option value='all' selected>All</option>" +
+        "<option value='no-ignored'>Exclude ignored</option>" +
+        "<option value='ignored-only'>Ignored only</option>" +
+        "<option value='seeds-only'>Seeds only</option><option value='learned-only'>Learned only</option></select></li>");
       $("ul.nav-pills").append("<li><a id='WordListButton'>Word list</a></li>");
       $("#WordListButton").click(SpiderLevels);
       break;
@@ -98,13 +103,27 @@ function SpiderDone() {
 //Pull words and definitions from a level page.
 function ExtractTerms(Data) {
   var LevelName = $(Data).find("strong.level-number").text().trim();
+  var WordFilter = $('#WordFilter option:selected').val();
   Out("Level: " + LevelName);
   Wordlist[LevelName] = [];
   $(Data).find("div.text-text").each(function() {
-    Wordlist[LevelName].push({
-      "Word": $(this).find("div.col_a").text(),
-      "Translation": $(this).find("div.col_b").text()
-    });
+    var ignored;
+    if ($(this).find("div.status").length && $(this).find("div.status").text() === "Ignored") {
+      ignored = true;
+    }
+    else {
+      ignored = false;
+    }
+    if ((WordFilter === "no-ignored" && ignored === false) ||
+        (WordFilter === "ignored-only" && ignored === true) ||
+        (WordFilter === "seeds-only" && $(this).find("i.ico-seed").length) ||
+        (WordFilter === "learned-only" && $(this).find("i.ico-water").length) ||
+        WordFilter === "all") {
+          Wordlist[LevelName].push({
+            "Word": $(this).find("div.col_a").text(),
+            "Translation": $(this).find("div.col_b").text()
+        });
+    }
   });
   $("#WordListContainer h2").append(".");
 }
