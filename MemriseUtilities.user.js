@@ -61,6 +61,7 @@ function Main() {
 //Iterate through the levels and kick off the retrieves.
 function SpiderLevels() {
   //Add our UI
+  $('#WordListContainer').remove();
   $("div.container-main").prepend("<div id='WordListContainer'><h2>Working</h2></div>");
   var urls = [];
   if ($("a.level").length > 0) {  
