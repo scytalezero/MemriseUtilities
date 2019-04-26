@@ -93,7 +93,7 @@ function SpiderDone() {
   for (var Level in Wordlist) {
     for (LCV=0; LCV<Wordlist[Level].length; LCV++) {
       WordlistText += Wordlist[Level][LCV].Word + "\t" + Wordlist[Level][LCV].Translation + "\t" + 
-        CourseTag + "," + SanitizeTag(Level) + "\n";
+        CourseTag + "," + Level + "\n";
       BareWordlistText = BareWordlistText += Wordlist[Level][LCV].Word + "\t" + Wordlist[Level][LCV].Translation + "\n";
     }
   }
@@ -103,7 +103,7 @@ function SpiderDone() {
 
 //Pull words and definitions from a level page.
 function ExtractTerms(Data) {
-  var LevelName = $(Data).find("strong.level-number").text().trim();
+  var LevelName = $(Data).find('.progress-box-title').text().trim();
   var WordFilter = $('#WordFilter option:selected').val();
   Out("Level: " + LevelName);
   Wordlist[LevelName] = [];
