@@ -31,7 +31,7 @@ function Main() {
         });
       }
       break;
-    case "www.memrise.com":
+    case "app.memrise.com":
       Out("Processing for Memrise");
       if ( ($("li.active > a.tab").length === 0) || ($(".container > h2").length > 0) || location.href.match(/\/edit\//) ) {
         //This isn't a course levels page
@@ -66,7 +66,7 @@ function SpiderLevels() {
   var urls = [];
   if ($("a.level").length > 0) {  
     $("a.level").each(function(Index) {
-        urls.push("https://www.memrise.com" + $(this).attr("href"));
+        urls.push("https://app.memrise.com" + $(this).attr("href"));
     });
   } else {
       urls.push(window.location.href);
